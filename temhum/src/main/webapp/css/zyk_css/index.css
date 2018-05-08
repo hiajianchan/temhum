@@ -1,0 +1,137 @@
+#nav_head {
+	height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+
+    background: #fff;
+    /* border-radius:0 0 15px 15px; */
+    margin-bottom: 5px;
+}
+
+#log_div {
+	height: 100%;
+	width:20%;
+	float: left;
+	text-align: center;
+
+	background: #5B5B5B;
+	border-radius:15px 15px 15px 15px;
+}
+
+#manage_div {
+	height: 100%;
+	width: 10%;
+	margin-left: 10px;
+	float: left;
+	text-align: center;
+
+	border-right: 1px solid #DCDCDC;
+	border-left: 1px solid #DCDCDC;
+
+}
+
+#user_div {
+	height: 100%;
+	width: 25%;
+	float: right;
+	text-align: center;
+
+}
+
+#user_info {
+	height: 100%;
+	width: 80%;
+	float: left;
+	background: #5B5B5B;
+	border-radius:15px 0 0 15px;
+}
+
+#out {
+	height: 100%;
+	width: 19%;
+	float: right;
+	background: #ADADAD;
+}
+
+#out {
+	height: 100%;
+	width: 19%;
+	float: right;
+	background: #ADADAD;
+}
+
+#nav_temhum {
+	height: 280px;
+	width: 100%;
+	background: #fff;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#tem_realtime {
+	height: 280px;
+	width: 50%;
+	float: left;
+	border-right: 1px solid #DCDCDC;
+}
+
+#tem_info {
+	height: 36px;
+	width: 100%;
+	line-height: 36px;
+	text-align: left;
+	background: #ededed;
+	border: 1px solid #DCDCDC;
+}
+
+#tem_data {
+	height: 244px;
+	width: 100%;
+	line-height: 244px;
+	text-align: center;
+}
+
+#hum_realtime {
+	height: 280px;
+	width: 49.9%;
+	float: right;
+}
+
+#hum_info {
+	height: 36px;
+	width: 100%;
+	line-height: 36px;
+	text-align: left;
+	background: #ededed;
+	border: 1px solid #DCDCDC;
+}
+
+#hum_data {
+	height: 244px;
+	width: 100%;
+	line-height: 244px;
+	text-align: center;
+}
+
+#nav_data {
+	height: 288px;
+	width: 100%;
+	background: #fff;
+	margin-top: 5px;
+}
+
+#data_info {
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	text-align: left;
+	background: #ededed;
+}
+
+#data_data {
+	height: 258px;
+	width: 100%;
+	line-height: 258px;
+	text-align: center;
+}
