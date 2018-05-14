@@ -1,7 +1,5 @@
 package edu.haut.greenhouse.server.websocket;
 
-import java.util.Date;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -30,8 +28,19 @@ import io.netty.util.CharsetUtil;
 public class MyWebSocketHandler extends SimpleChannelInboundHandler<Object> {
 
 	private WebSocketServerHandshaker handshaker;
-	private static final String WEB_SOCKET_URL = "ws://"+WebsocketConfig.TEST_IP+":"+
-			WebsocketConfig.WEBSOCKET_PORT+"/websocket";
+	
+	private static final String WEB_SOCKET_URL;
+	
+	static {
+		if (WebsocketConfig.ONLINE) {
+			 WEB_SOCKET_URL = "ws://"+WebsocketConfig.ONLINE_IP+":"+
+					WebsocketConfig.WEBSOCKET_PORT+"/websocket";
+		} else {
+			 WEB_SOCKET_URL = "ws://"+WebsocketConfig.TEST_IP+":"+
+						WebsocketConfig.WEBSOCKET_PORT+"/websocket";
+		}
+	}
+	
 	
 	// 客户端与服务端创建连接的时候调用
 	@Override
