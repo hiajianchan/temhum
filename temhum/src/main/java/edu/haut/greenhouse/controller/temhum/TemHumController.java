@@ -37,7 +37,7 @@ public class TemHumController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/todayData")
+	@RequestMapping(value = "/todayData", produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String getTodayData(HttpServletRequest request) {
 		Map<Object, Object> map = new HashMap<>();
@@ -102,7 +102,7 @@ public class TemHumController {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping("/lateData")
+	@RequestMapping(value = "/lateData", produces="application/json;charset=utf-8")
 	@ResponseBody
 	public String getLateData(HttpServletRequest request) {
 		Map<Object, Object> map = new HashMap<>();
