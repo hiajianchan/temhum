@@ -11,7 +11,7 @@ public class WebsocketConfig {
 	
 	
 	
-	public static String ONLINE_IP = "39.106.184.51";
+	public static String ONLINE_IP = "47.93.45.150";
 	
 	
 	public static String TEST_IP = "192.168.253.1";
@@ -20,7 +20,7 @@ public class WebsocketConfig {
 	public static int WEBSOCKET_PORT = 1152;
 	
 	
-	public static boolean ONLINE = false;
+	public static boolean ONLINE = true;
 
 	/**
 	 * 存储每一个客户端接入进来的channel对象
