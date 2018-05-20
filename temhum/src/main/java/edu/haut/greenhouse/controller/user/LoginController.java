@@ -81,7 +81,7 @@ public class LoginController {
 		if (email == null) {
 			map.put(JsonStatus.STATUS, JsonStatus.ERROR);
 			map.put(JsonStatus.MSG, "登录邮箱不能为空");
-			return "/common/login";
+			return "/common/login2";
 		}
 		
 		//登录密码
@@ -89,7 +89,7 @@ public class LoginController {
 		if (passwd == null) {
 			map.put(JsonStatus.STATUS, JsonStatus.ERROR);
 			map.put(JsonStatus.MSG, "密码不能为空");
-			return "/common/login";
+			return "/common/login2";
 		}
 		
 		//是否记住我
