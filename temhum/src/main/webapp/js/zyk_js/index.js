@@ -170,7 +170,7 @@ if(window.WebSocket){
 	*/
 	$.ajax({
 		type : "GET",
-		url : "/temhum/lateData",
+		url : "/th/lateData",
 		dataType : "json",
 		success : function (result) {
 			if (result['status'] == 200) {
@@ -193,7 +193,7 @@ if(window.WebSocket){
 
 	$.ajax({
 		type: "GET",
-		url : "/temhum/todayData",
+		url : "/th/todayData",
 		dataType : "json",
 		success : function(result) {
 			if (result['status'] == 200) {
@@ -213,7 +213,7 @@ if(window.WebSocket){
 
 		$.ajax({
 			type: "GET",
-			url : "/temhum/todayData",
+			url : "/th/todayData",
 			dataType : "json",
 			success : function(result) {
 				if (result['status'] == 200) {

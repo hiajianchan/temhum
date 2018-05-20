@@ -26,7 +26,7 @@ import edu.haut.greenhouse.service.temhum.TemAndHumService;
  * @version 1.0
  */
 @Controller
-@RequestMapping("temhum")
+@RequestMapping("th")
 public class TemHumController {
 	
 	@Autowired
