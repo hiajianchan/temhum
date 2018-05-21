@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>温湿度监测平台首页</title>
+		<title>家庭远程温湿度监测</title>
 		<link href="${pageContext.request.contextPath}/css/zyk_css/index.css" rel="stylesheet" type="text/css">
 		<link href="${pageContext.request.contextPath}/css/wea_headStyle.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/echarts/echarts.min.js"></script>
@@ -28,7 +28,7 @@
         		<img src="${pageContext.request.contextPath}/images/zyk_img/logo.png" height="40px" width="40px;"/>
         	</div>
         	<div style="float:left;">
-        		<font style="font-size:20px; color:white;">温湿度监测系统</font>
+        		<font style="font-size:20px; color:white;">家庭远程温湿度监测系统</font>
         	</div>
         </div>
         <shiro:hasRole name="root">

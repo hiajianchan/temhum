@@ -8,7 +8,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>监测平台</title>
+<title>家庭远程温湿度监测系统</title>
 <link href="${pageContext.request.contextPath}/css/zyk_css/login.css" rel="stylesheet" type="text/css" />
 </head>
 

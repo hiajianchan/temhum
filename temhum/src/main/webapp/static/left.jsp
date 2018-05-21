@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>温室环境监测系统</title>
+    <title>家庭远程温湿度监测系统</title>
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
     <script language="JavaScript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
 

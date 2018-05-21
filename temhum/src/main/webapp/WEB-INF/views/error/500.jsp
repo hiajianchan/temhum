@@ -3,7 +3,7 @@
 <html>
 <meta charset="utf-8">
 <head>
-    <title>温湿度监测系统</title>
+    <title>家庭远程温湿度监测系统</title>
     <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/css/public.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css">
