@@ -38,9 +38,12 @@ public class MyRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		
+		//获取登录的Email
 		String userEmail = principals.toString();
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		
+		//从数据库中查询用户是否存在，
+		//如果用户不存在则返回null
 		User record = new User();
 		record.setEmail(userEmail);
 		User user = userService.queryOne(record);
@@ -51,6 +54,7 @@ public class MyRealm extends AuthorizingRealm {
 		//用户的角色
 		Set<Role> roles = userService.getRoles(user.getId());
 		
+		//若用户的角色不为空，则将角色添加到权限信息中
 		if (roles != null) {
 			Set<String> roleNames = new HashSet<>();
 			for (Role role : roles) {
@@ -61,7 +65,7 @@ public class MyRealm extends AuthorizingRealm {
 		
 		//用户的权限
 		Set<Permission> permissions = userService.getPermissions(user.getId());
-		
+		//如果用户的权限不为空，则将权限添加到用户的认证信息中
 		if (permissions != null) {
 			Set<String> perNames = new HashSet<>();
 			for (Permission per : permissions) {
@@ -88,6 +92,7 @@ public class MyRealm extends AuthorizingRealm {
 		record.setEmail(userEmail);
 		User user = userService.queryOne(record);
 		
+		//如果用户存在则进行验证登录
 		if (user != null) {
 			AuthenticationInfo info = new SimpleAuthenticationInfo(user.getEmail(), user.getPasswd(), ByteSource.Util.bytes(SALT), getName());
 			return info;

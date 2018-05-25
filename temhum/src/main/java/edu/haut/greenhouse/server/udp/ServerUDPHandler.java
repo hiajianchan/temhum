@@ -32,30 +32,36 @@ public class ServerUDPHandler extends ChannelInboundHandlerAdapter {
 	public ServerUDPHandler() {
 		super();
 	}
-
+	
+	/**
+	 * 读取和处理UDP客户端发送的数据
+	 */
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws InterruptedException {
 
-		
+		//将Object类型的msg强转为DatagramPacket类型
 		DatagramPacket packet = (DatagramPacket) msg;
 		
 		//获取客户端的IP
 		String senderHost = packet.sender().getHostString();
 		System.out.println("客户端IP：" + senderHost);
+		
+		//获取客户端的端口号
 		int senderPort = packet.sender().getPort();
 		System.out.println("客户端端口号：" + senderPort);
 		
+		//获取数据，并将数据读进byte数组
 		ByteBuf buf = packet.copy().content();
-		
 		byte[] req = new byte[buf.readableBytes()];
-		
 		buf.readBytes(req);
 		
+		//将数据转换为String类型
 		String body = new String(req, CharsetUtil.UTF_8);
 		
 		System.out.println("接收到的消息是：" + body);
 		Date date = new Date();
 		if (body !=null) {
+			//如果数据不为空则将数据封装成TemAndHum对象
 			String[] temAndHum = body.split(",");
 			if (temAndHum.length == 2) {
 				BigDecimal tem = new BigDecimal(temAndHum[0]).setScale(2, BigDecimal.ROUND_HALF_UP);
@@ -98,6 +104,9 @@ public class ServerUDPHandler extends ChannelInboundHandlerAdapter {
 //				packet.sender())).sync();
 	}
 	
+	/**
+	 * 处理异常
+	 */
 	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
 		
 		if (cause instanceof ReadTimeoutException) {
