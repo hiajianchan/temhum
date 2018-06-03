@@ -20,7 +20,7 @@ public class WebsocketConfig {
 	public static int WEBSOCKET_PORT = 1152;
 	
 	
-	public static boolean ONLINE = false;
+	public static boolean ONLINE = true;
 
 	/**
 	 * 存储每一个客户端接入进来的channel对象
