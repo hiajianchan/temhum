@@ -1,3 +1,5 @@
+var today_data = new Date().getDate();
+
 /**
  * 画出温度饼状图
  */
@@ -75,10 +77,11 @@ var day = time.getDate();
 if (day < 10) {
 	day = "0" + day;
 }
-today = time.getFullYear() + "-" + month + "-" + day +" "+"00:00:00"
+var today = time.getFullYear() + "-" + month + "-" + day +" "+"00:00:00";
+var today_data = time.getFullYear() + "-" + month + "-" + day;
 
-time.setTime(day3.getTime()+24*60*60*1000);
-var n_month = time.getMonth + 1;
+time.setTime(time.getTime()+24*60*60*1000);
+var n_month = time.getMonth() + 1;
 if (n_month < 10) {
 	n_month = "0" + n_month;
 }
@@ -87,12 +90,13 @@ if (n_day < 10) {
 	n_day = "0" + n_day;
 }
 
-tomorr = time.getFullYear() + "-" + n_month + "-" + n_day +" "+"00:00:00";
-
+var tomorr = time.getFullYear() + "-" + n_month + "-" + n_day +" "+"00:00:00";
+console.log("+++"+today)
+console.log("----" +tomorr)
 
 var anchor = [
-    {name:'2018-05-05 00:00:00', value:['2018-05-05 00:00:00', 0]},
-    {name:'2018-05-06 00:00:00', value:['2018-05-06 00:00:00', 0]}
+    {name:today, value:[today, 0]},
+    {name:tomorr, value:[tomorr, 0]}
     ];
 var chartDay_data = echarts.init(document.getElementById('data_data'));
 day_data_option = {
@@ -217,15 +221,16 @@ if(window.WebSocket){
 
 	$.ajax({
 		type: "GET",
-		url : "/th/todayData",
+		url : "/th/todayData?today=" + today_data,
 		dataType : "json",
 		success : function(result) {
 			if (result['status'] == 200) {
 				//请求成功
 				day_data_option.series[0].data = result['temData'];
 				day_data_option.series[1].data = result['humData'];
-				chartDay_data.setOption(day_data_option, true);
+				
 			}
+			chartDay_data.setOption(day_data_option, true);
 		}
 
 	});
@@ -237,7 +242,7 @@ if(window.WebSocket){
 
 		$.ajax({
 			type: "GET",
-			url : "/th/todayData",
+			url : "/th/todayData?today=" + today_data,
 			dataType : "json",
 			success : function(result) {
 				if (result['status'] == 200) {
@@ -246,8 +251,9 @@ if(window.WebSocket){
 					//console.log(result['humData']);
 					day_data_option.series[0].data = result['temData'];
 					day_data_option.series[1].data = result['humData'];
-					chartDay_data.setOption(day_data_option, true);
+					
 				}
+				chartDay_data.setOption(day_data_option, true);
 			}
 
 		});
