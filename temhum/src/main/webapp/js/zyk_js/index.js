@@ -66,6 +66,30 @@ chartHum.setOption(hum_option, true);
  * 画出当天温度和湿度
  */
 
+var time = new Date();
+var month = time.getMonth()+1;
+if (month < 10) {
+	month = "0" + month;
+}
+var day = time.getDate();
+if (day < 10) {
+	day = "0" + day;
+}
+today = time.getFullYear() + "-" + month + "-" + day +" "+"00:00:00"
+
+time.setTime(day3.getTime()+24*60*60*1000);
+var n_month = time.getMonth + 1;
+if (n_month < 10) {
+	n_month = "0" + n_month;
+}
+var n_day = time.getDate();
+if (n_day < 10) {
+	n_day = "0" + n_day;
+}
+
+tomorr = time.getFullYear() + "-" + n_month + "-" + n_day +" "+"00:00:00";
+
+
 var anchor = [
     {name:'2018-05-05 00:00:00', value:['2018-05-05 00:00:00', 0]},
     {name:'2018-05-06 00:00:00', value:['2018-05-06 00:00:00', 0]}
