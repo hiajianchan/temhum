@@ -168,7 +168,7 @@ if(!window.WebSocket){
 }
 
 if(window.WebSocket){
-	socket = new WebSocket("ws://192.168.253.2:1152/websocket");
+	socket = new WebSocket("ws://47.93.45.150:1152/websocket");
 	socket.onmessage = function(event){
 		var tem = event.data.split(',')[0];
 		var hum = event.data.split(',')[1];
